@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Guyane - Le saviez-vous ?</title>
+    <style>
+        html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		
+		
+		/* Styles de base simples */
+        body {
+            font-family: Miriam Libre, sans-serif;
+            background-color: #e8f5e9; /* Vert très clair */
+            color: #1b5e20; /* Vert foncé */
+            text-align: center;
+            padding: 20px;
+			background-image: url('ImageGuyane.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+			min-height: 100vh;
+        }
+
+        /* Boîte principale au centre */
+        .carte {
+            background-color: #ADD548;
+        
+            border: 3px solid #2e7d32;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2e7d32;
+        }
+
+        /* Style du bouton */
+        button {
+            background-color: #fbc02d; /* Jaune / Or */
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f9a825;
+			transform: scale(1.1)
+        }
+
+		button:active {
+			transform: scale(0.95)
+		}
+
+        /* Zone où le texte de l'anecdote apparaît */
+        #zone-anecdote {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f8e9;
+            border: 2px dashed #81c784;
+            border-radius: 10px;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        ul {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carte">
+        <h1>La Guyane</h1>
+        <p>Découvre des pepites (pepites d'ors ?) incroyables sur la Guyane !</p>
+
+        <!-- Bouton principal -->
+        <button onclick="donnerAnecdote()">Le saviez-vous ? (Anecdote)</button>
+
+        <!-- Zone qui affiche l'anecdote -->
+        <div id="zone-anecdote">
+            Clique sur le bouton ci-dessus pour afficher une anecdote !
+        </div>
+
+        <hr style="margin-top: 30px; border: 1px solid #c8e6c9;">
+
+        <h2>Quelques infos rapides :</h2>
+        <ul>
+            <li><strong>Superficie :</strong> Couverte à plus de 95% par la forêt amazonienne.</li>
+            <li><strong>Espace :</strong> Le Centre Spatial se trouve à Kourou.</li>
+            <li><strong>Culture :</strong> Célèbre pour son grand Carnaval et ses Touloulous.</li>
+			<li><strong>Musique :</strong> Le Kasékò est une musique creole repondu sur tout le territoire.</li>
+        </ul>
+    </div>
+
+    <!-- Script JavaScript très basique -->
+    <script>
+        // La liste des anecdotes
+        var anecdotes = [
+            "La Guyane est le plus grand département de toute la France !",
+            "Le carnaval en Guyane est l'un des plus longs du monde (plusieurs semaines).",
+            "La fusée Ariane décolle depuis Kourou en Guyane.",
+            "Les tortues Luth viennent pondre leurs œufs directement sur les plages de Guyane.",
+            "En Guyane, il y a plus de 700 espèces d'oiseaux différentes !",
+            "En Guyane, le rhum local très célèbre est la Belle Cabresse !",
+			"Le nom de famille le plus repondu en Guyane est le nom JOSEPH",
+			"Le saviez vous, Le createur de cette page WEB aime bien les films",
+			"Mon dessert pref c'est le chocolat creole avec une bonne tranche de pain natte",
+			"Ton papa qui roule sans le permis ( bien sur c'est une blague)",
+        ];
+
+        // Fonction appelée quand on clique sur l ebouton
+        function donnerAnecdote() {
+            // Choisit un numéro au hasard dans la liste
+            var nombreAuHasard = Math.floor(Math.random() * anecdotes.length);
+            
+            // Affiche l'anecdote dans le bloc HTML
+            document.getElementById("zone-anecdote").innerHTML = anecdotes[nombreAuHasard];
+        }
+    </script>
+
+</body>
+</html>
